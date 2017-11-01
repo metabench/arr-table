@@ -1,0 +1,20 @@
+{
+  "name": "arr-table",
+  "main": "arr-table.js",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0",
+    "moment": "^2.18.1",
+    "jsgui3": "^0.0.8"
+  },
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "description": "Array Table",
+  "author": "James Vickers <james@metabench.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metabench/arr-table.git"
+  },
+  "version": "0.0.1"
+}
