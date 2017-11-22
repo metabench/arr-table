@@ -1,4 +1,4 @@
-var jsgui = require('jsgui3');
+var lang = require('lang-mini');
 var each = jsgui.each;
 var tof = jsgui.tof;
 var is_arr_of_strs = jsgui.is_arr_of_strs;
@@ -9,11 +9,9 @@ class Array_Table {
         if (t_spec === 'array') {
             var that = this;
             var load_arr_objs = (arr_objs) => {
-                
                 //var arr_items = [], arr_values;
                 var arr_values;
                 that.values = [];
-
                 each(arr_objs, (item) => {
                     if (item) {
                         arr_values = [];
@@ -24,7 +22,6 @@ class Array_Table {
                         that.values.push(arr_values);
                     }
                 });
-
                 that.keys = Object.keys(obj_body.result[0]);
                 that.data = [that.keys, that.values];
             }
@@ -35,7 +32,6 @@ class Array_Table {
                     this.data = spec;
                     this.keys = spec[0];
                     this.values = spec[1];
-
                 } else {
                     load_arr_objs(spec);
                 }
@@ -43,6 +39,8 @@ class Array_Table {
                 load_arr_objs(spec);
             }
             this.create_map_keys();
+            this.fields = this.keys;
+            this.records = this.values;
         }
     }
 
@@ -61,7 +59,6 @@ class Array_Table {
         var keys = this.keys;
         var obj = this.values[idx];
         var res = {};
-
         each(keys, (key, i) => {
             res[keys[i]] = obj[i];
         });
@@ -110,7 +107,6 @@ class Array_Table {
         var res_vals = [];
         var that = this;
         //console.log('map_selectable_values', map_selectable_values);
-        
         each(this.values, (v, i) => {
             //console.log('v[i_field]', v[i_field]);
             if (map_selectable_values[v[i_field]]) {
@@ -118,10 +114,8 @@ class Array_Table {
             }
         });
         //throw 'stop';
-
         var ar_res = new Array_Table([this.keys, res_vals]);
         return ar_res;
-
     }
 
     select_at_matching_fn(fn_match) {
@@ -136,14 +130,6 @@ class Array_Table {
         var ar_res = new Array_Table([this.keys, res_vals]);
         return ar_res;
     }
-
-    // Should be able to sort by one of the internal fields.
-    // Then get the top n
-
-
-
-    // Has an array internally.
-
 }
 
 // Arrkv static processing methods...?
