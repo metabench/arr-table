@@ -1,7 +1,7 @@
 var lang = require('lang-mini');
-var each = jsgui.each;
-var tof = jsgui.tof;
-var is_arr_of_strs = jsgui.is_arr_of_strs;
+var each = lang.each;
+var tof = lang.tof;
+var is_arr_of_strs = lang.is_arr_of_strs;
 
 class Array_Table {
     constructor(spec) {
