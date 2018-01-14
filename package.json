@@ -3,7 +3,7 @@
   "main": "arr-table.js",
   "license": "MIT",
   "dependencies": {
-    "lang-mini": "^0.0.1"
+    "lang-mini": "^0.0.2"
   },
   "engines": {
     "node": ">=6.5.0"
@@ -14,5 +14,5 @@
     "type": "git",
     "url": "https://github.com/metabench/arr-table.git"
   },
-  "version": "0.0.4"
+  "version": "0.0.5"
 }
